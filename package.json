@@ -17,11 +17,6 @@
     "mongoose": "^6.9.2",
     "nodemon": "^2.0.20"
   },
-  "pre-commit": [
-		"ts.check",
-		"build",
-		"add-build"
-	],
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",

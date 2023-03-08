@@ -19,7 +19,7 @@ mongoose.set("strictQuery", true);
 mongoose
   .connect(`${process.env.MONGODB_URL}`)
   .then(() => {
-    app.listen(process.env.PORT);
+    app.listen(process.env.PORT || 8080);
   })
   .then(() => {
     console.log("Connected to Database");

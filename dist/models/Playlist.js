@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose_1 = __importDefault(require("mongoose"));
+const mongoose_1 = __importDefault(require("mongoose"));
 //SCHEMA FOR USER
-var Schema = mongoose_1.default.Schema;
-var PlaylistSchema = new Schema({
+const Schema = mongoose_1.default.Schema;
+const PlaylistSchema = new Schema({
     picture_xl: {
         type: String,
         required: true,
@@ -34,3 +34,4 @@ var PlaylistSchema = new Schema({
     }
 });
 exports.default = mongoose_1.default.model("Playlist", PlaylistSchema);
+//# sourceMappingURL=Playlist.js.map
