@@ -4,12 +4,19 @@
   "description": "",
   "main": "Index.js",
   "scripts": {
-    "start": "npm run build && node dist/Index.js",
-    "dev": "nodemon ./src/Index.ts",
-    "build": "rimraf ./dist && tsc",
-    "prestart": "node npm run build",
-    "prod": "npm run build && node dist/Index.js"
+    "start": "nodemon src/Index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
+  "author": "Temidayo Falomo",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
