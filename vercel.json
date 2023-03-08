@@ -1,16 +1,16 @@
 {
-	"version": 2,
-	"builds": [
-		{
-			"src": "dist/Index.js",
-			"use": "@vercel/node",
-			"config": { "includeFiles": ["dist/**"] }
-		}
-	],
-	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "dist/index.js"
-		}
-	]
+  "version": 2,
+  "builds": [
+    {
+      "src": "./dist/Index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/Index.js"
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
