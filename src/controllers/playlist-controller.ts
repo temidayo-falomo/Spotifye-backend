@@ -111,6 +111,25 @@ export const deletePlaylist = async (req: Request, res: Response) => {
   return res.status(200).json({ message: "Successfully Deleted Playlist!" });
 };
 
+export const editPlaylistName = async (req: Request, res: Response) => {
+  const playlistId = req.body.playlistId;
+  let playlist;
+
+  try {
+    playlist = await Playlist.findByIdAndUpdate(playlistId, {
+      title: req.body.title,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  if (!playlist) {
+    return res.status(404).json({ message: "Can't edit this playlist!" });
+  }
+
+  return res.status(200).json({ message: "Successfully Edited Playlist!" });
+};
+
 export const getUserPlaylist = async (req: Request, res: Response) => {
   let playlists;
   try {

@@ -2,6 +2,7 @@ import express from "express";
 import {
   addSongToPlaylist,
   deletePlaylist,
+  editPlaylistName,
   getAllPlaylists,
   getPlaylist,
   getUserPlaylist,
@@ -21,6 +22,7 @@ playlistRouter.get("/playlist/:id", getPlaylist);
 
 playlistRouter.put("/add-track", addSongToPlaylist);
 playlistRouter.put("/remove-track", removeSongFromPlaylist);
+playlistRouter.put("/edit-playlist-name", editPlaylistName);
 
 playlistRouter.get("/user-playlists/:id", getUserPlaylist);
 
