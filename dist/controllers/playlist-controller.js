@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUserPlaylist = exports.deletePlaylist = exports.removeSongFromPlaylist = exports.addSongToPlaylist = exports.getAllPlaylists = exports.getPlaylist = exports.newPlaylist = void 0;
+exports.getUserPlaylist = exports.editPlaylistName = exports.deletePlaylist = exports.removeSongFromPlaylist = exports.addSongToPlaylist = exports.getAllPlaylists = exports.getPlaylist = exports.newPlaylist = void 0;
 const Playlist_1 = __importDefault(require("../models/Playlist"));
 //NEW Playlist
 const newPlaylist = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -114,6 +114,23 @@ const deletePlaylist = (req, res) => __awaiter(void 0, void 0, void 0, function*
     return res.status(200).json({ message: "Successfully Deleted Playlist!" });
 });
 exports.deletePlaylist = deletePlaylist;
+const editPlaylistName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const playlistId = req.body.playlistId;
+    let playlist;
+    try {
+        playlist = yield Playlist_1.default.findByIdAndUpdate(playlistId, {
+            title: req.body.title,
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+    if (!playlist) {
+        return res.status(404).json({ message: "Can't edit this playlist!" });
+    }
+    return res.status(200).json({ message: "Successfully Edited Playlist!" });
+});
+exports.editPlaylistName = editPlaylistName;
 const getUserPlaylist = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let playlists;
     try {

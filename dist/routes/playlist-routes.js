@@ -13,6 +13,7 @@ playlistRouter.delete("/remove-playlist/:id", playlist_controller_1.deletePlayli
 playlistRouter.get("/playlist/:id", playlist_controller_1.getPlaylist);
 playlistRouter.put("/add-track", playlist_controller_1.addSongToPlaylist);
 playlistRouter.put("/remove-track", playlist_controller_1.removeSongFromPlaylist);
+playlistRouter.put("/edit-playlist-name", playlist_controller_1.editPlaylistName);
 playlistRouter.get("/user-playlists/:id", playlist_controller_1.getUserPlaylist);
 exports.default = playlistRouter;
 //# sourceMappingURL=playlist-routes.js.map
