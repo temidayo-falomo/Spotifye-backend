@@ -19,6 +19,7 @@ const newPlaylist = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     let playlist;
     try {
         playlist = new Playlist_1.default({
+            _id: req.body._id,
             picture_xl: req.body.picture_xl,
             title: req.body.title,
             user: req.body.user,

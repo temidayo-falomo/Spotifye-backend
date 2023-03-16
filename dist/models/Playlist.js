@@ -7,6 +7,10 @@ const mongoose_1 = __importDefault(require("mongoose"));
 //SCHEMA FOR USER
 const Schema = mongoose_1.default.Schema;
 const PlaylistSchema = new Schema({
+    _id: {
+        type: String,
+        required: true,
+    },
     picture_xl: {
         type: String,
         required: true,
@@ -31,7 +35,7 @@ const PlaylistSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-    }
+    },
 });
 exports.default = mongoose_1.default.model("Playlist", PlaylistSchema);
 //# sourceMappingURL=Playlist.js.map

@@ -7,6 +7,7 @@ export const newPlaylist = async (req: Request, res: Response) => {
 
   try {
     playlist = new Playlist({
+      _id: req.body._id,
       picture_xl: req.body.picture_xl,
       title: req.body.title,
       user: req.body.user,

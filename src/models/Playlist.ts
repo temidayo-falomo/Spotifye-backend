@@ -5,6 +5,10 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const PlaylistSchema = new Schema({
+  _id: {
+    type: String,
+    required: true,
+  },
   picture_xl: {
     type: String,
     required: true,
@@ -29,7 +33,7 @@ const PlaylistSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
 });
 
 export default mongoose.model("Playlist", PlaylistSchema);
