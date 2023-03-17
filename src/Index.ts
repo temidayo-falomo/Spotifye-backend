@@ -9,7 +9,11 @@ dotenv.config();
 const app: Application = express();
 
 //MIDDLEWARES
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://spotify-e.netlify.app"],
+  })
+);
 app.use(express.json());
 app.use("/api", userRouter);
 app.use("/api/playlists", playlistRouter);

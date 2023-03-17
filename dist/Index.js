@@ -12,7 +12,9 @@ const playlist_routes_1 = __importDefault(require("./routes/playlist-routes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 //MIDDLEWARES
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ["http://localhost:3000", "https://spotify-e.netlify.app"],
+}));
 app.use(express_1.default.json());
 app.use("/api", user_routes_1.default);
 app.use("/api/playlists", playlist_routes_1.default);
